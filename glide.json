@@ -1,8 +1,8 @@
 [
   {
     "kind": "column",
-    "name": "IP Fetch",
-    "description": "Fetch user's IP City",
+    "name": "City Fetch",
+    "description": "Fetch user's City",
     "author": "Vlad Penev",
     "params": [
     ],
