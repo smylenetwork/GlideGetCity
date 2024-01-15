@@ -1,0 +1,13 @@
+[
+  {
+    "kind": "column",
+    "name": "IP Fetch",
+    "description": "Fetch user's IP address",
+    "author": "Vlad Penev",
+    "params": [
+    ],
+    "result": {
+      "type": "string"
+    }
+  }
+]
