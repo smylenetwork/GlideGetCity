@@ -1,8 +1,8 @@
 window.function = async function () {
-  // Use fetch API to get location details
-  const response = await fetch('https://ipwho.is/');
+  // Use a CORS proxy to fetch data
+  const response = await fetch('https://cors-anywhere.herokuapp.com/https://ipwho.is/');
   const data = await response.json();
 
-  // Return only the city
-  return data.city;
+  // Return the city
+  return data.city; // For ZIP, replace with `data.postal`
 };
