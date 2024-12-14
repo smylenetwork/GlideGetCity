@@ -1,5 +1,5 @@
 window.function = async function () {
-  const response = await fetch('https://cors-anywhere.herokuapp.com/https://ipwho.is/', {
+  const response = await fetch('https://ipwho.is/', {
     headers: {
       'Origin': 'https://example.com', // Replace with your app's origin or leave it as a placeholder
     }
