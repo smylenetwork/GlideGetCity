@@ -1,6 +1,7 @@
 window.function = async function () {
   const apiKey = '7C791B275B4F7E3D9AFF52B751413F59'; // Your API key
-  const endpoint = `https://api.ip2location.io/?key=${apiKey}&format=json`;
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // Public CORS proxy
+  const endpoint = `${proxyUrl}https://api.ip2location.io/?key=${apiKey}&format=json`;
 
   try {
     // Fetch the geolocation data
