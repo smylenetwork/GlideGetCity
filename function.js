@@ -1,8 +1,8 @@
 window.function = async function () {
-  // Use fetch API to get IP address
-  const response = await fetch('https://ipapi.co/json/');
+  // Use fetch API to get location details
+  const response = await fetch('https://ipwho.is/');
   const data = await response.json();
 
-  // Return the IP address
+  // Return only the city
   return data.city;
-}
+};
