@@ -1,6 +1,6 @@
 window.function = async function () {
   const apiKey = '7C791B275B4F7E3D9AFF52B751413F59'; // Your API key
-  const endpoint = `https://api.ip2location.io/?key=${apiKey}&format=json`; // API endpoint
+  const endpoint = `https://api.ip2location.io/?key=${apiKey}&format=json`;
 
   try {
     // Fetch the geolocation data
@@ -11,9 +11,10 @@ window.function = async function () {
 
     const data = await response.json();
 
-    // Extract and return city and ZIP code
-    return { city: data.city_name, zip: data.zip_code };
+    // Return only the city
+    return data.city_name || "City not found";
   } catch (error) {
+    // Handle errors gracefully
     return `Error: ${error.message}`;
   }
 };
