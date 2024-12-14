@@ -1,15 +1,16 @@
-export default async function ({ params, data }) {
-  // The parameter specifies which field to extract (e.g., city or postal)
-  const field = params.Field;
+window.function = async function () {
+  const response = await fetch('https://ipwho.is/', {
+    headers: {
+      'Origin': 'https://your-app-url.com' // Replace this with your actual app URL if required
+    }
+  });
 
-  // Call the ipwho.is API
-  const response = await fetch('https://ipwho.is/');
-  const json = await response.json();
-
-  // Return the requested field if it exists
-  if (json[field]) {
-    return json[field];
-  } else {
-    return `Field "${field}" not found`; // Handle invalid fields
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
-}
+
+  const data = await response.json();
+
+  // Return the city
+  return data.city || "City not found";
+};
