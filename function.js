@@ -1,8 +1,5 @@
 window.function = async function () {
   const response = await fetch('https://ipwho.is/', {
-    headers: {
-      'Origin': 'https://example.com', // Replace with your app's origin or leave it as a placeholder
-    }
   });
 
   const data = await response.json();
