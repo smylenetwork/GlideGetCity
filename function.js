@@ -1,8 +1,12 @@
 window.function = async function () {
-  // Use a CORS proxy to fetch data
-  const response = await fetch('https://cors-anywhere.herokuapp.com/https://ipwho.is/');
+  const response = await fetch('https://cors-anywhere.herokuapp.com/https://ipwho.is/', {
+    headers: {
+      'Origin': 'https://example.com', // Replace with your app's origin or leave it as a placeholder
+    }
+  });
+
   const data = await response.json();
 
   // Return the city
-  return data.city; // For ZIP, replace with `data.postal`
+  return data.city; // Or `data.postal` for ZIP
 };
