@@ -1,9 +1,15 @@
-window.function = async function () {
-  const response = await fetch('https://ipwho.is/', {
-  });
+export default async function ({ params, data }) {
+  // The parameter specifies which field to extract (e.g., city or postal)
+  const field = params.Field;
 
-  const data = await response.json();
+  // Call the ipwho.is API
+  const response = await fetch('https://ipwho.is/');
+  const json = await response.json();
 
-  // Return the city
-  return data.city; // Or `data.postal` for ZIP
-};
+  // Return the requested field if it exists
+  if (json[field]) {
+    return json[field];
+  } else {
+    return `Field "${field}" not found`; // Handle invalid fields
+  }
+}
